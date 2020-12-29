@@ -1,0 +1,68 @@
+<div class="calls-favourites__container">
+    <div class="calls__description__container">
+        <button type="button" class="js-btn-prev">
+            <svg class="js-btn-prev__icon">
+                <use href="../../images/sprite/symbol-defs.svg#icon-chevron_left-24px-1-1"></use>
+            </svg>
+        </button>
+        <h3 class="calls__title">Мої оголошення</h3>
+        <button type="button" class="js-btn-next">
+            <svg class="js-btn-next__icon">
+                <use href="../../images/sprite/symbol-defs.svg#icon-chevron_right-24px-1"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="js-custom-slider-container">
+
+        <ul class="myCalls__list js-myCalls__list js-custom-slider js-card-open">
+
+            {{#each calls}}<li class="myCalls__item js-myCalls__item" data-category="{{category}}"
+                data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
+                data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
+                <div class="calls-favourites__img-container pointer-none">
+                    {{#each imageUrls}}<img src="{{this}}" alt="">{{/each}}
+                    {{!-- <svg class="calls-favourites__heart__icon">
+                        <use href="../images/sprite/symbol-defs.svg#icon-heart-orange"></use>
+                    </svg> --}}
+                </div>
+                <div class="calls-favourites__text-container pointer-none">
+                    <p>{{title}}</p>
+                    <p>{{price}} грн</p>
+                </div>
+            </li>{{/each}}
+        </ul>
+    </div>
+
+    <div class="favourites__description__container">
+        <button type="button" class="js-btn-prev__favourites">
+            <svg class="js-btn-prev__icon">
+                <use href="../../images/sprite/symbol-defs.svg#icon-chevron_left-24px-1-1"></use>
+            </svg>
+        </button>
+        <h3 class="favourites__title">Обране</h3>
+        <button type="button" class="js-btn-next__favourites">
+            <svg class="js-btn-next__icon">
+                <use href="../../images/sprite/symbol-defs.svg#icon-chevron_right-24px-1"></use>
+            </svg>
+        </button>
+    </div>
+
+    <div class="js-custom-slider-container__favourites">
+        <ul class="favourites__list js-favourites__list js-custom-slider__favourites js-card-open">
+            {{#each favourites}}<li class="myFavourites__item js-myFavourites__item" data-category="{{category}}"
+                data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
+                data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
+                <svg class="calls-favourites__orange__heart__icon">
+                    <use href="../images/sprite/symbol-defs.svg#icon-heart-orange" data-id="{{_id}}"></use>
+                </svg>
+                <div class="calls-favourites__img-container">{{#each imageUrls}}<img src="{{this}}" alt="">{{/each}}
+
+                </div>
+                <div class="calls-favourites__text-container">
+                    <p>{{title}}</p>
+                    <p>{{price}} грн</p>
+                </div>
+            </li>{{/each}}
+        </ul>
+    </div>
+</div>

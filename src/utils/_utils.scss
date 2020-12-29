@@ -1,0 +1,193 @@
+//Цвета
+$main-color: #ff6b09;
+$bold-text-color: #000000;
+$inactive-color: #bbbbbb;
+$white-color: #ffffff;
+//Анимация
+$animation-timing: 0.2s ease-in;
+//Шрифты
+$montserrat: 'Montserrat', sans-serif;
+$roboto: 'Roboto', sans-serif;
+body {
+  font-family: $roboto;
+}
+.SEARCH-FORM__img-block {
+  pointer-events: none;
+}
+//Сброс UL
+%list-throw {
+  list-style: none;
+  padding: 0;
+}
+//Сброс p, h1, h2 и т.д.
+%text-throw {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+// Сброс ссылки
+%link-throw {
+  display: block;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+// Сброс кнопки
+%button-throw {
+  border: none;
+  outline: none;
+}
+// Стили секции
+%section-style {
+  @media screen and (min-width: 320px) {
+    padding-bottom: 110px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-bottom: 180px;
+  }
+}
+//Стили контейнера
+%container-style {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media screen and (max-width: 479px) {
+    max-width: 450px;
+  }
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+  }
+}
+// Стили UL API
+%list-style {
+  @extend %list-throw;
+  display: grid;
+  grid-gap: 20px;
+  @media screen and (min-width: 320px) {
+    grid-template-columns: 1fr;
+  }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+// Стили картинки внутри LI
+%img-style {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+// Стили оранжевой кнопки ПК
+%button-desktop-orange {
+  @extend %button-throw;
+  display: block;
+  padding: 30px;
+  text-align: center;
+  color: $white-color;
+  background-color: $main-color;
+  transition: $animation-timing;
+  &:hover,
+  &:focus {
+    color: $bold-text-color;
+    background-color: $white-color;
+  }
+}
+//Стили белой кнопки ПК
+%button-desktop-white {
+  @extend %button-throw;
+  display: block;
+  padding: 30px;
+  text-align: center;
+  color: $bold-text-color;
+  background-color: $white-color;
+  transition: $animation-timing;
+  &:hover,
+  &:focus {
+    color: $white-color;
+    background-color: $main-color;
+  }
+}
+// Стили оранжевой кнопки планшет
+%button-tablet-orange {
+  @extend %button-throw;
+  display: block;
+  padding: 25px;
+  text-align: center;
+  color: $white-color;
+  background-color: $main-color;
+  transition: $animation-timing;
+  border: 1px solid #bbbbbb;
+  &:hover,
+  &:focus {
+    color: $bold-text-color;
+    background-color: $white-color;
+  }
+}
+//Стили белой кнопки планшет
+%button-tablet-white {
+  @extend %button-throw;
+  display: block;
+  padding: 25px;
+  text-align: center;
+  color: $bold-text-color;
+  background-color: $white-color;
+  transition: $animation-timing;
+  border: 1px solid #bbbbbb;
+  &:hover,
+  &:focus {
+    color: $white-color;
+    background-color: $main-color;
+  }
+}
+
+//Стили оранжевой кнопки телефон
+%button-mobile-orange {
+  @extend %button-throw;
+  display: block;
+  padding: 20px;
+  text-align: center;
+  color: $white-color;
+  background-color: $main-color;
+  transition: $animation-timing;
+  border: 1px solid #bbbbbb;
+  &:hover,
+  &:focus {
+    color: $bold-text-color;
+    background-color: $white-color;
+  }
+}
+//Стили белой кнопки телефон
+%button-mobile-white {
+  @extend %button-throw;
+  display: block;
+  padding: 20px;
+  text-align: center;
+  color: $bold-text-color;
+  background-color: $white-color;
+  transition: $animation-timing;
+  border: 1px solid #bbbbbb;
+  &:hover,
+  &:focus {
+    color: $white-color;
+    background-color: $main-color;
+  }
+}
+//Стили кнопки вправо влево
+%button-slider-style {
+  @extend %button-throw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}

@@ -1,0 +1,485 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  * Main card modal styles
+  *
+  */
+
+.lightbox-card-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  // height: 100vh;
+  transition: opacity var(--animation-duration) var(--timing-function);
+  overflow-x: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+  z-index: 5000;
+  &.is-open {
+    opacity: 1;
+    pointer-events: initial;
+    transition: all 0.4s;
+  }
+}
+
+.lightbox-card-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-card-modal__content {
+  position: relative;
+  display: block;
+  width: 861px;
+  height: 668px;
+  // margin: 54px auto 0px auto;
+
+  // z-index: 5;
+  transform: scale(0.95);
+  transition: transform var(--animation-duration) var(--timing-function);
+}
+
+/* 
+  * Card modal
+  *
+  */
+.card-modal {
+  // top: 4%;
+  width: 290px;
+  max-height: 780px;
+
+  padding: 55px 18px 60px 18px;
+  margin: 0px auto 0px auto;
+
+  background-color: #ffffff;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    width: 860px;
+    min-height: 670px;
+    padding-top: 54px;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    width: 860px;
+    min-height: 670px;
+    padding-top: 54px;
+  }
+}
+
+.card-modal__close-btn {
+  @extend %button-throw;
+  position: absolute;
+  cursor: pointer;
+  // background-color: red;
+  width: 24px;
+  height: 24px;
+  top: 15px;
+  right: 45px;
+
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover .card-modal__icon-close,
+  &:focus .card-modal__icon-close {
+    fill: #000;
+    border: none;
+    // border-color: #ffffff;
+  }
+
+  @media screen and (min-width: 767px) {
+    top: 15px;
+    right: 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.card-modal__icon-close {
+  height: 24px;
+  width: 24px;
+}
+
+// .edit-modal__close-btn {
+//   position: absolute;
+//   top: 15px;
+//   right: 15px;
+//   border: none;
+//   background-color: inherit;
+
+//   @media screen and (min-width: 768px) {
+//     top: 30px;
+//     right: 30px;
+//   }
+// }
+
+/* 
+  * Left sidebar with images
+  *
+  */
+.card-modal__image-wraper {
+  display: block;
+  width: 253px;
+
+  @media screen and (min-width: 768px) {
+    // width: 765px;
+    // min-height: 615px;
+    margin: 0px 0px 0px 40px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 380px;
+    // min-height: 670px;
+    margin: 0px 0px 0px 60px;
+  }
+}
+
+.card-modal__image-big {
+  @extend %img-style;
+  display: block;
+  width: 253px;
+  height: 253px;
+  padding: 0px;
+  margin: 62px 0px 5px 0px;
+
+  background-color: #f5f6fb;
+  border: none;
+
+  @media screen and (min-width: 768px) {
+    width: 380px;
+    min-height: 471px;
+    margin: 0px 0px 5px 0px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 380px;
+    height: 471px;
+    margin: 0px 0px 5px 0px;
+  }
+}
+
+.card-modal_tumbnails-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 15px auto 0px auto;
+  width: 45px;
+
+  list-style-type: none;
+
+  @media screen and (min-width: 768px) {
+    width: 380px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 380px;
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+.card-modal__tumbnails-item {
+  // margin: 5px;
+  width: 5px;
+  height: 5px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  border-color: #c4c4c4;
+
+  &:first-child {
+    background-color: #ff6b09;
+    border-color: #ff6b09;
+    margin-left: 0px;
+  }
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  @media screen and (min-width: 768px) {
+    border-radius: 0;
+    width: 68px;
+    height: 73px;
+    margin: 5px;
+  }
+  @media screen and (min-width: 1200px) {
+    border-radius: 0;
+    width: 68px;
+    height: 73px;
+    margin: 5px;
+  }
+}
+
+.card-modal__image-tumbnail {
+  @extend %img-style;
+  display: none;
+  width: 5px;
+  height: 5px;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    border-radius: 0;
+    width: 68px;
+    height: 73px;
+
+    &:nth-child(2) {
+      margin: 5px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    display: block;
+    border-radius: 0;
+    width: 68px;
+    height: 73px;
+
+    &:nth-child(2) {
+      margin: 5px;
+    }
+  }
+}
+
+/* 
+  * Right sidebar with information
+  *
+  */
+.card-modal__info-container {
+  position: relative;
+  display: block;
+  width: 253px;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-left: 165px;
+    width: 340px;
+  }
+  @media screen and (min-width: 1200px) {
+    display: block;
+    margin-left: 38px;
+    width: 340px;
+  }
+}
+
+.card-modal__heading-wrapper {
+  position: absolute;
+  top: -360px;
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+    top: 0px;
+  }
+  @media screen and (min-width: 1200px) {
+    position: relative;
+    top: 0px;
+  }
+}
+
+.goods-modal__text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.14px;
+  letter-spacing: 0.02em;
+  color: $inactive-color;
+}
+
+.goods-modal__title {
+  display: block;
+  max-height: 60px;
+  margin-bottom: 10px;
+}
+
+.goods-modal__price,
+.goods-modal__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+}
+
+.goods-modal__price {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.goods-modal__button {
+  @extend %button-mobile-orange;
+  position: absolute;
+  top: 60px;
+  z-index: 25;
+
+  width: 255px;
+  height: 60px;
+  // padding: 0px 60px 0px 60px;
+  margin: 0px 0px 20px 0px;
+
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  border: 2px solid $main-color;
+
+  &:active {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 81px;
+    margin-top: 40px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    top: 81px;
+    margin-top: 40px;
+  }
+}
+
+.goods-modal__button-underinfo {
+  // @extend %button-mobile-orange;
+  // position:absolute;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 255px;
+  height: 60px;
+
+  // margin-top: 30px;
+  margin-bottom: 13px;
+
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+
+  background-color: #f5f6fb;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 30px;
+  }
+  border: 2px solid $main-color;
+}
+
+.phone-title {
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+
+.card-modal__like-share {
+  display: flex;
+  justify-content: space-between;
+  width: 217px;
+  margin-bottom: 40px;
+  padding: 0px;
+
+  color: #878686;
+
+  // font-family: Roboto;
+  // font-style: normal;
+  // font-weight: 300;
+  // font-size: 12px;
+  // line-height: 14px;
+  // letter-spacing: 0.02em;
+}
+
+.goods-modal__item {
+  display: flex;
+  align-items: baseline;
+  // margin-right: 45px;
+}
+
+.icon-modal {
+  margin-left: 10px;
+  padding-top: 10px;
+  fill: $inactive-color;
+}
+
+.discription-title {
+  margin: 20px 0px 10px 0px;
+}
+
+.goods-modal__discription-text {
+  height: 96px;
+  width: 340px;
+
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: $bold-text-color;
+}
+
+// // img для мобилки
+.goods-modal__mob-photo-big {
+  width: 255px;
+  height: 255px;
+}
+
+// // блок фото для таб. + дестоп
+// .tablet-slider {
+//   @media screen and (max-width: 767px) {
+//     display: none;
+//   }
+// }
+// img для для таб. + дестоп
+
+.tablet-slider__big-photo {
+  object-fit: contain;
+  margin-bottom: 10px;
+  margin-right: 38px;
+
+  @media screen and (min-width: 768px) {
+    width: 380px;
+    height: 470px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 380px;
+    height: 470px;
+  }
+}
+
+// .slider-mini_item {
+//   @media screen and (min-width: 768px) {
+//     width: 52px;
+//     height: 55px;
+//   }
+
+//   @media screen and (min-width: 1200px) {
+//     width: 68px;
+//     height: 73px;
+//   }
+// }
+
+// .goods-modal-tablet__img-container {
+//   // padding: 15px;
+//   @media screen and (min-width: 768px) {
+//     display: flex;
+//     // flex-wrap: wrap;
+//   }
+// }

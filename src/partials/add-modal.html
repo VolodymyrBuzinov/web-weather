@@ -1,0 +1,127 @@
+<div class="add-modal__overlay">
+  <div class="add-modal">
+    <div class="add-modal__content">
+      <button type="button" class="add-modal__close-btn" data-close="true">
+        <svg class="add-modal__close-icon">
+          <use href="../images/sprite/symbol-defs.svg#icon-close-24px-1"></use>
+        </svg>
+      </button>
+
+      <h2 class="add-form__title">Додати оголошення</h2>
+
+      <form action="#" class="add-form js-add-form">
+        <div class="form-items-wrapper">
+          <div class="add-form__item">
+            <label class="add-form__label" for="form-name">Назва товару</label>
+            <div class="input-wrapper">
+              <input
+                name="title"
+                id="form-name"
+                type="text"
+                class="add-form__name _req _name input"
+              />
+              <div class="add-form__error-message">
+                Введіть коректну назву товару
+              </div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <label class="add-form__label">Фото</label>
+            <div class="input-wrapper">
+              <ul class="image-preview__add _req">
+                <li class="image-preview__item">
+                  <div class="choose-image">
+                    <input
+                      name="file"
+                      accept=".jpg"
+                      type="file"
+                      class="choose-image__input add-image"
+                    />
+                    <div class="image-button">+</div>
+                  </div>
+                </li>
+              </ul>
+              <div class="add-form__error-message">
+                Потрібно добавити від 1-го до 5-ти фото
+              </div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <label class="add-form__label" for="form-description"
+              >Опис товару</label
+            >
+            <div class="input-wrapper">
+              <textarea
+                name="description"
+                id="form-description"
+                class="add-form__description _description _req input"
+              ></textarea>
+              <div class="add-form__error-message">
+                Коректний опис товару - мінімум 5 символів
+              </div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <div class="add-form__label">Категорія товару</div>
+            <div class="select-wrapper">
+              <select
+                name="category"
+                class="add-form__select _category _req input"
+              >
+                <option
+                  value="category"
+                  class="select-option select-option-first"
+                >
+                  Категорія
+                </option>
+              </select>
+              <div class="add-form__error-message">Виберіть категорію</div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <label class="add-form__label" for="form-price">Ціна</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="form-price"
+                name="price"
+                data-source="price"
+                class="add-form__product-price _price _req input"
+                autocomplete="off"
+                minlength="1"
+                maxlength="16"
+                placeholder="0.00 грн"
+              />
+              <div class="add-form__error-message">
+                Введіть коректну ціну товару
+              </div>
+              <div class="add-form__error-message error-price">
+                Ціна для цїєї категорії має бути 0
+              </div>
+            </div>
+          </div>
+
+          <div class="add-form__item">
+            <label class="add-form__label" for="form-phone">Телефон</label>
+            <div class="input-wrapper">
+              <input
+                id="form-phone"
+                type="tel"
+                name="phone"
+                data-source="phone"
+                class="add-form__product-telephone-number _phone _req input"
+                placeholder="+38(0--) --- -- --"
+              />
+              <div class="add-form__error-message">Введіть номер телефону</div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="add-product-btn">Додати</button>
+      </form>
+    </div>
+  </div>
+</div>

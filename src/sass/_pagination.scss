@@ -1,0 +1,315 @@
+.container {
+  @extend %container-style;
+}
+
+/////////  Отображение карточки  ///////////
+.card {
+  &__items {
+    height: 100% !important;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
+    background-color: #f5f6fb;
+    // width: 295px;
+    @media screen and (min-width: 768px) {
+      height: 350px;
+    }
+  }
+  &__textp {
+    padding: 20px;
+  }
+  &__img-wraperp {
+    position: relative;
+    height: 275px;
+  }
+  &__svgp {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    transition: $animation-timing;
+    &:hover {
+      fill: $main-color;
+    }
+  }
+  &__imgp {
+    height: 100%;
+    @extend %img-style;
+  }
+  &__linkp {
+    @extend %link-throw;
+    pointer-events: none;
+    padding: 0;
+    & :not(:first-child) {
+      display: none;
+    }
+    height: 275px;
+  }
+  &__titlep {
+    margin: 0px 0px 4px 0px !important;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.07em;
+  }
+  &__items:nth-child(n + 3) {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  &__pricep {
+    margin: 0px 10px 0px 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  &__items:hover::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 275px;
+    display: block;
+    content: '';
+  }
+  &__items svg {
+    z-index: 2;
+    fill: white;
+    cursor: pointer;
+  }
+  &__double-pricep {
+    height: 16px;
+    @extend %text-throw;
+    display: flex;
+    align-items: center;
+    text-align: start;
+  }
+}
+.activp {
+  text-decoration: line-through black;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+
+  color: #bbbbbb;
+  margin: 0px 10px 0px 0px;
+}
+// .category-cards {
+//   @media screen and (min-width: 320px) and (max-width: 767px) {
+//     & :nth-child(n + 5) {
+//       display: none;
+//     }
+//   }
+// }
+
+.is_hiden {
+  display: none;
+}
+
+///////// Пагинация категорий  //////////
+.render_card {
+  display: none;
+}
+
+.pagination-card-all {
+  & :nth-child(n + 5) {
+    display: none;
+  }
+  @extend %list-throw;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    overflow: hidden;
+    & :not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+.span_card {
+  & :nth-child(n + 3) {
+    display: none;
+  }
+  & :nth-child(2) {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+    text-decoration-line: underline;
+    color: $main-color;
+  }
+  & :first-child {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+}
+.section-pagination {
+  @extend %container-style;
+  padding: 0px 15px;
+}
+.pagination-name-group-div {
+  & :not(:first-child) {
+    display: none;
+  }
+}
+.pagination-name-group {
+  display: block;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  & a {
+    padding-left: 15px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+    text-decoration-line: underline;
+
+    color: $main-color;
+  }
+}
+.pagination-card {
+  height: 350px;
+  min-width: 290px;
+  background-color: lavender;
+  @media screen and (min-width: 768px) {
+    min-width: 352px;
+  }
+  @media screen and (min-width: 1280px) {
+    min-width: 285px;
+  }
+}
+
+.pagination-card-block {
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+////////// Кнопки перехода по страницам пагинации ///////////
+
+.section-btn {
+  background-color: #f5f6fb;
+  @media screen and (min-width: 320px) {
+    padding-bottom: 30px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-bottom: 60px;
+  }
+}
+.pagination-btn {
+  display: flex;
+  width: 151.92px;
+  height: 50px;
+  @extend %list-throw;
+  margin: 0px;
+  padding-left: 15px;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 22px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-left: 20px;
+  }
+}
+.pagination-catigories-btn {
+  padding: 15px 0px;
+  text-align: center;
+  background-color: $white-color;
+  & a {
+    color: $bold-text-color;
+    text-decoration: none;
+    padding: 15px 20px;
+  }
+  & .active {
+    color: $white-color;
+    background-color: $bold-text-color;
+  }
+}
+
+//////////  Footer  /////////////
+
+html {
+  height: 100%;
+}
+
+body {
+  /* Растягиваем body по высоте html */
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.title {
+  display: none;
+}
+.section-footer {
+  @extend %section-style;
+  padding-bottom: 0px;
+  padding: 38px 0px;
+  @media screen and (min-width: 768px) {
+    padding: 34px 0px;
+  }
+}
+.footer-container {
+  @extend %container-style;
+
+  & span {
+    & a {
+      color: $bold-text-color;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    text-align: center;
+  }
+}
+.copy {
+  color: #000000;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+.heard {
+  color: #ff6b09;
+  font-size: 16px !important;
+}
+.reserved {
+  margin-right: 30px;
+  margin-left: 5px;
+  border-left: 2px solid lightgray;
+  padding-left: 10px;
+  @media screen and (min-width: 768px) {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}
+.footer-container {
+  & span {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.03em;
+  }
+}

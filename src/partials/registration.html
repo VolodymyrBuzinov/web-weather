@@ -1,0 +1,69 @@
+<div class="registration-container">
+  <div class="registration-modal-backdrop is-hidden" data-modal>
+    <div class="registration-modal-form">
+      <button class="registration-close-button" data-modal-close>
+        <svg class="registration-close-icon">
+          <use href="../images/sprite/symbol-defs.svg#icon-close-24px-1"></use>
+        </svg>
+      </button>
+
+      <p class="registration-text registration-text-title">
+        Ви можете авторизуватися за допомогою Googlt Account:
+      </p>
+      <button class="registration-button-google">
+        <a
+          class="google-reg"
+          href="https://callboard-backend.herokuapp.com/auth/google"
+        >
+          <svg class="registration-button-google-icon">
+            <use
+              href="../images/sprite/symbol-defs.svg#icon-google-symbol-1"
+            ></use>
+          </svg>
+          <span class="registration-button-google-text">Google</span>
+        </a>
+      </button>
+      <p class="registration-text">
+        Або зайти за допомогою імейлу і пароля, попередньо зареєструвавшись:
+      </p>
+      <form class="registration-form" method="POST" id="form">
+        <!-- onSubmit="toggleRegisterModal()" -->
+
+        <div class="registration-input-container">
+          <input
+            type="email"
+            class="registration-input registration-input-login"
+            placeholder="E-mail"
+            name="email"
+            id="email"
+            required
+          />
+          <div class="requirements-email">Must be a valid email address.</div>
+          <input
+            type="password"
+            class="registration-input registration-input-password"
+            placeholder="Password"
+            name="password"
+            minlength="6"
+            id="password"
+            required
+          />
+          <div class="requirements-password">
+            Your password must be at least 6 characters as well as contain at
+            least one uppercase, one lowercase, and one number.
+          </div>
+        </div>
+
+        <div class="registration-btn-container">
+          <button type="submit" class="registration-button-entry">
+            Увійти
+          </button>
+          <span class="error" aria-live="polite"></span>
+          <button type="submit" class="registration-button">
+            Зареєструватись
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

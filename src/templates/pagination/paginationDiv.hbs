@@ -1,0 +1,55 @@
+{{#each this}}
+<div class="category-border-up"></div>
+<div class="container js-category">
+    <section class="category-item ">
+        <div class="category-description">
+            <button type="button" class="category-btn btn-prev swiper-button-prev">
+                &lt;
+            </button>
+
+            <!-- Здесь нужно рендерить название категории  -->
+            <div class="span_card">
+                {{#each this}}
+                <span class="category-description__name">{{#if isOnSale}} Sales {{else}}{{category}}{{/if}}</span>
+
+                <a href="/{{category}}" data-class="{{isOnSale}}" class="{{category}}"> Дивитися
+                    всі</a>
+                {{/each}}
+            </div>
+            <button type="button" class="category-btn btn-next swiper-button-next">
+                &gt;
+            </button>
+        </div>
+        <div class="slider-container swiper-container">
+            <ul class="category-cards slider-track swiper-wrapper js-card-open">
+                {{#each this}}
+                <li class="card__items category-cards__item slider-item swiper-slide" data-category="{{category}}"
+                    data-description="{{description}}" data-phone="{{phone}}" data-userID="{{userId}}" data-id="{{_id}}"
+                    data-title="{{title}}" data-images="{{imageUrls}}" data-price="{{price}}">
+                    <a class="card__linkp" target="_blank" href="{{imageUrls}}">
+                        <div class="card__img-wraperp ">
+                            <img class="card__imgp" src="{{imageUrls}}" alt="image">
+                        </div>
+                    </a>
+                    <svg class="card__svgp" data-id={{_id}} id="svg">
+                        <use href="../images/sprite/symbol-defs.svg#icon-heart-orange" data-id={{_id}}></use>
+                    </svg>
+                    {{!-- <svg class="card__svg2">
+                        <use href="../images/sprite/symbol-defs.svg#icon-fullscreen-24px-1"></use>
+                    </svg> --}}
+
+                    <div class="card__textp">
+                        <h3 class="card__titlep">{{title}}</h3>
+                        <div class="card__double-pricep">
+                            {{#if isOnSale}} <p class="card__salep activp">{{oldPrice}} грн</p> {{/if}}
+                            <p class="card__pricep" {{#if isOnSale}} style="color: #FF6B09" {{/if}}>{{price}} грн</p>
+                        </div>
+                    </div>
+
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+</div>
+{{/each}}
