@@ -1,8 +1,7 @@
 //Цвета
-$main-color: #ff6b09;
-$bold-text-color: #000000;
-$inactive-color: #bbbbbb;
+$main-color: #1e202b;
 $white-color: #ffffff;
+$hover-color: #009ad8;
 //Анимация
 $animation-timing: 0.2s ease-in;
 //Шрифты
@@ -11,10 +10,41 @@ $roboto: 'Roboto', sans-serif;
 body {
   font-family: $roboto;
 }
-.SEARCH-FORM__img-block {
-  pointer-events: none;
+// Кнопки хедера
+%buttons-style {
+  display: inline-block;
+  outline: none;
+  background-color: transparent;
+  padding: 5px 25px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  transition: $animation-timing;
+  color: $main-color;
+  font-weight: 500;
+  &:hover,
+  &:focus {
+    border: 2px solid $hover-color;
+    color: $hover-color;
+  }
 }
-//Сброс UL
+// Кнопка поиска
+%search-button {
+  display: inline-block;
+  outline: none;
+  background-color: transparent;
+  padding: 15px 40px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  transition: $animation-timing;
+  color: $main-color;
+  font-weight: 500;
+  &:hover,
+  &:focus {
+    border: 2px solid $hover-color;
+    color: $hover-color;
+  }
+}
+//Сброс стилей UL
 %list-throw {
   list-style: none;
   padding: 0;
@@ -85,109 +115,4 @@ body {
   width: 100%;
   object-fit: cover;
   object-position: center;
-}
-// Стили оранжевой кнопки ПК
-%button-desktop-orange {
-  @extend %button-throw;
-  display: block;
-  padding: 30px;
-  text-align: center;
-  color: $white-color;
-  background-color: $main-color;
-  transition: $animation-timing;
-  &:hover,
-  &:focus {
-    color: $bold-text-color;
-    background-color: $white-color;
-  }
-}
-//Стили белой кнопки ПК
-%button-desktop-white {
-  @extend %button-throw;
-  display: block;
-  padding: 30px;
-  text-align: center;
-  color: $bold-text-color;
-  background-color: $white-color;
-  transition: $animation-timing;
-  &:hover,
-  &:focus {
-    color: $white-color;
-    background-color: $main-color;
-  }
-}
-// Стили оранжевой кнопки планшет
-%button-tablet-orange {
-  @extend %button-throw;
-  display: block;
-  padding: 25px;
-  text-align: center;
-  color: $white-color;
-  background-color: $main-color;
-  transition: $animation-timing;
-  border: 1px solid #bbbbbb;
-  &:hover,
-  &:focus {
-    color: $bold-text-color;
-    background-color: $white-color;
-  }
-}
-//Стили белой кнопки планшет
-%button-tablet-white {
-  @extend %button-throw;
-  display: block;
-  padding: 25px;
-  text-align: center;
-  color: $bold-text-color;
-  background-color: $white-color;
-  transition: $animation-timing;
-  border: 1px solid #bbbbbb;
-  &:hover,
-  &:focus {
-    color: $white-color;
-    background-color: $main-color;
-  }
-}
-
-//Стили оранжевой кнопки телефон
-%button-mobile-orange {
-  @extend %button-throw;
-  display: block;
-  padding: 20px;
-  text-align: center;
-  color: $white-color;
-  background-color: $main-color;
-  transition: $animation-timing;
-  border: 1px solid #bbbbbb;
-  &:hover,
-  &:focus {
-    color: $bold-text-color;
-    background-color: $white-color;
-  }
-}
-//Стили белой кнопки телефон
-%button-mobile-white {
-  @extend %button-throw;
-  display: block;
-  padding: 20px;
-  text-align: center;
-  color: $bold-text-color;
-  background-color: $white-color;
-  transition: $animation-timing;
-  border: 1px solid #bbbbbb;
-  &:hover,
-  &:focus {
-    color: $white-color;
-    background-color: $main-color;
-  }
-}
-//Стили кнопки вправо влево
-%button-slider-style {
-  @extend %button-throw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50px;
 }
