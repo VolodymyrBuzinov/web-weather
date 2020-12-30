@@ -1,21 +1,16 @@
 import refs from '../refs'
 import apiService from './apiService'
 import renderCard from './renderCard'
-// import slider from './slider'
+// import bigImg from './js/bigImg'
+
 
 function inputSearchValue() {
-//   refs.spinner.classList.add('loader')
-    // refs.body.innerHTML = ''
-    console.log(refs.body);
+    refs.body.innerHTML = ''
     apiService.inputValue(
         // refs.inputSearch.value
         'lviv'
          ).then(e => {
         renderCard(e.hits)
-    //   refs.btn.classList.remove('none')
     })
-      .finally(() => {
-    //   refs.spinner.classList.remove('loader')
-    });
 }
 inputSearchValue()
