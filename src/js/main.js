@@ -10,7 +10,7 @@ mainRefs.header.addEventListener('click', evt => {
 mainRefs.main.addEventListener('click', evt => {
     console.log(evt);
     
-    if (evt.target.getAttribute('class') === "photo") {
+    if (evt.target.getAttribute('class') === "photo swiper-slide") {
        
         bigImg(evt)
     }

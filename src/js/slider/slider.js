@@ -2,10 +2,14 @@ import Swiper from 'swiper/bundle';
 export default function onSlider() {
   document.querySelectorAll('.swiper-container').forEach(function (elem) {
     	new Swiper('.swiper-container', {
-      effect: 'flip',
-      grabCursor: true,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
       pagination: {
         el: '.swiper-pagination',
+        clickable: true,
       },
       navigation: {
         nextEl: '.swiper-button-next',
