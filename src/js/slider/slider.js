@@ -2,9 +2,8 @@ import Swiper from 'swiper/bundle';
 export default function onSlider() {
   document.querySelectorAll('.swiper-container').forEach(function (elem) {
     	new Swiper('.swiper-container', {
-      slidesPerView: 2,
-      spaceBetween: 20,
-      // slidesPerGroup: 3,
+      slidesPerView: 1,
+      spaceBetween: 10,
       loop: true,
       loopFillGroupWithBlank: true,
       pagination: {
@@ -13,22 +12,22 @@ export default function onSlider() {
       },
       breakpoints: {
         // when window width is >= 740px
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-          direction: 'horizontal',
-        },
+        // 320: {
+          // slidesPerView: 1,
+          // spaceBetween: 10,
+          // direction: 'horizontal',
+        // },
         768: {
           slidesPerView: 2,
           spaceBetween: 20,
-          direction: 'horizontal',
+          // direction: 'horizontal',
           slidesPerGroup: 2,
         },
         1280: {
-          slidesPerView: 4,
-          spaceBetween: 20,
-          direction: 'horizontal',
-          slidesPerGroup: 4,
+          slidesPerView: 3,
+          spaceBetween: 30,
+          // direction: 'horizontal',
+          slidesPerGroup: 3,
         },
       },
       navigation: {
