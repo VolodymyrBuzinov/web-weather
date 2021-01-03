@@ -7,6 +7,19 @@ body {
   // visibility: hidden;
   display: none;
 }
+#slider {
+  height: 100vh;
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.8)),
+    url('https://wikiway.com/upload/resize_cache/hl-photo/492/1024_800_1/kreshatik_9.JPG');
+  background-repeat: no-repeat;
+  background-size: 130%;
+  background-attachment: fixed;
+  background-position: top;
+  // background: url('https://wikiway.com/upload/resize_cache/hl-photo/492/1024_800_1/kreshatik_9.JPG')
+  //   no-repeat;
+  // background-size: 120%;
+}
+
 .photo {
   height: 400px !important;
 }
@@ -18,7 +31,7 @@ body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
-  margin-top: 10%;
+  padding-top: 250px;
 }
 
 .swiper-slide {

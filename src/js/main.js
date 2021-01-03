@@ -13,7 +13,12 @@ mainRefs.header.addEventListener('click', evt => {
     headerLogic.historyApi(evt);    
 
     if (evt.target.getAttribute('href') === "/photo"){
-        document.querySelector('#slider').classList.remove('is-hidden')
+        refs.hidenSlider.classList.remove('is-hidden')
+       
+      if (refs.search.value.length === 0) {
+          refs.swiperContainer.classList.add('is-hidden')
+      }
+
     }
     // console.log(evt.target);     
 })
@@ -23,6 +28,9 @@ mainRefs.header.addEventListener('change', evt => {
     headerLogic.searchQuery(evt);   
     // console.log(evt.target);   
      inputSearchValue(evt.target.value)
+     if (evt.target.value.length > 0) {
+        refs.swiperContainer.classList.remove('is-hidden')
+    }
     
   
 })
