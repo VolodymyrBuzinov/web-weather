@@ -1,0 +1,114 @@
+body {
+  background-color: $main-color;
+}
+.header-container {
+  @extend %container-style;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header-icon {
+  display: block;
+  @media screen and (max-width: 767px) {
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: 768px) {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
+  }
+}
+.header-input {
+  outline: none;
+  width: 250px;
+  padding: 5px 25px;
+  border-radius: 20px;
+  border: 2px solid $main-color;
+  margin-right: 10px;
+  transition: border $animation-timing;
+  text-align: center;
+  &:focus {
+    border: 2px solid $hover-color;
+  }
+  @media screen and (max-width: 1279px) {
+    margin-bottom: 10px;
+  }
+}
+.header-nav {
+  position: relative;
+  &__swipe {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    transform: rotate(90deg);
+    @media screen and (min-width: 1280px) {
+      display: none;
+    }
+  }
+  &__link {
+    @extend %buttons-style;
+    text-align: center;
+    @media screen and (max-width: 767px) {
+      font-size: 15px;
+    }
+    @media screen and (min-width: 1280px) {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (max-width: 1279px) {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $hover-color;
+    border-radius: 20px;
+    padding-top: 65px;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+    height: 90px;
+    box-shadow: 0px 0px 23px 0px rgba(0, 154, 216, 1);
+  }
+}
+.header-button {
+  @extend %search-button;
+}
+
+.header-search__container {
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+    order: 2;
+  }
+  @media screen and (max-width: 1279px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
