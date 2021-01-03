@@ -14,7 +14,6 @@ mainRefs.header.addEventListener('click', evt => {
 
     if (evt.target.getAttribute('href') === "/photo"){
         document.querySelector('#slider').classList.remove('is-hidden')
-        // inputSearchValue()
     }
     // console.log(evt.target);     
 })
