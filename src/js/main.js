@@ -1,6 +1,7 @@
 import refs from './refs'
 import HeaderLogic from './header/headerLogic'
 import bigImg from './slider/bigImg'
+import inputSearchValue from './slider/input'
 
 const headerLogic = new HeaderLogic();
 const mainRefs = {
@@ -12,15 +13,19 @@ mainRefs.header.addEventListener('click', evt => {
     headerLogic.historyApi(evt);    
 
     if (evt.target.getAttribute('href') === "/photo"){
-        const hiddenSlider = document.querySelector('#slider')
-        hiddenSlider.classList.remove('is-hidden')
+        document.querySelector('#slider').classList.remove('is-hidden')
+        // inputSearchValue()
     }
     // console.log(evt.target);     
 })
+
 mainRefs.header.addEventListener('change', evt => {
     evt.preventDefault();       
-    headerLogic.searchQuery(evt);
-    // console.log(evt.target);     
+    headerLogic.searchQuery(evt);   
+    // console.log(evt.target);   
+     inputSearchValue(evt.target.value)
+    
+  
 })
 mainRefs.main.addEventListener('click', evt => {
     evt.preventDefault();
@@ -31,3 +36,7 @@ mainRefs.main.addEventListener('click', evt => {
     }
     // console.log(evt.target);
 })
+
+
+
+    

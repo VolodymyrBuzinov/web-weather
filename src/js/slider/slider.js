@@ -5,6 +5,8 @@ export default function onSlider() {
       slidesPerView: 1,
       spaceBetween: 10,
       loop: true,
+      observer: true,
+      observeParents: true,
       loopFillGroupWithBlank: true,
       pagination: {
         el: '.swiper-pagination',

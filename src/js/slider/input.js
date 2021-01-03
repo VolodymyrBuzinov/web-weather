@@ -1,16 +1,19 @@
 import refs from '../refs'
 import apiService from './apiService'
 import renderCard from './renderCard'
-// import bigImg from './js/bigImg'
 
 
-function inputSearchValue() {
+
+
+
+export default function inputSearchValue(inputSearch) {
     refs.body.innerHTML = ''
+const input = document.querySelector('.header-input')
+console.log(input.value);
     apiService.inputValue(
-        // refs.inputSearch.value
-        'lviv'
+        inputSearch
          ).then(e => {
         renderCard(e.hits)
     })
 }
-inputSearchValue()
+
