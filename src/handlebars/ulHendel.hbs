@@ -1,11 +1,5 @@
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        {{#each this}}
-        <div class="swiper-slide">
-            <img class="photo swiper-slide" loading="lazy" src="{{webformatURL}}" data-src="{{largeImageURL}}" alt="" />
-        </div>
-        {{/each}}
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+{{#each this}}
+<div class="swiper-slide">
+    <img class="photo swiper-slide" loading="lazy" src="{{webformatURL}}" data-src="{{largeImageURL}}" alt="img" />
 </div>
+{{/each}}

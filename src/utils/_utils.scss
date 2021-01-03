@@ -15,33 +15,32 @@ body {
   display: inline-block;
   outline: none;
   background-color: transparent;
+  text-decoration: none;
   padding: 5px 25px;
   border: 2px solid transparent;
   border-radius: 20px;
   transition: $animation-timing;
-  color: $main-color;
+  color: $hover-color;
   font-weight: 500;
   &:hover,
   &:focus {
     border: 2px solid $hover-color;
-    color: $hover-color;
   }
 }
 // Кнопка поиска
 %search-button {
   display: inline-block;
   outline: none;
-  background-color: transparent;
-  padding: 15px 40px;
-  border: 2px solid transparent;
+  border: 2px solid $hover-color;
+  background-color: $hover-color;
+  padding: 5px 25px;
   border-radius: 20px;
   transition: $animation-timing;
   color: $main-color;
   font-weight: 500;
-  &:hover,
-  &:focus {
-    border: 2px solid $hover-color;
-    color: $hover-color;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 0px 23px 0px rgba(0, 154, 216, 1);
   }
 }
 //Сброс стилей UL
