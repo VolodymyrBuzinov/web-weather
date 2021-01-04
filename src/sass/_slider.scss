@@ -1,120 +1,46 @@
-html,
-body {
-  position: relative;
-  height: 100%;
-}
 .is-hidden {
-  // visibility: hidden;
   display: none;
 }
-#slider {
-  height: 100vh;
-  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.8)),
-    url('https://wikiway.com/upload/resize_cache/hl-photo/492/1024_800_1/kreshatik_9.JPG');
-  background-repeat: no-repeat;
-  background-size: 130%;
-  background-attachment: fixed;
-  background-position: top;
-  // background: url('https://wikiway.com/upload/resize_cache/hl-photo/492/1024_800_1/kreshatik_9.JPG')
-  //   no-repeat;
-  // background-size: 120%;
+// #slider {
+//   height: 100vh;
+//   background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.8)),
+//     url('https://wikiway.com/upload/resize_cache/hl-photo/492/1024_800_1/kreshatik_9.JPG');
+//   background-repeat: no-repeat;
+//   background-size: 130%;
+//   background-attachment: fixed;
+//   background-position: top;
+// }
+
+//=======================================================================================================
+
+html {
+  scroll-behavior: smooth;
+}
+.slider-container {
+  @extend %container-style;
+}
+.gallery {
+  @extend %list-style;
+}
+
+.btn {
+  @extend %search-button;
+}
+
+.div-loader {
+  @extend %section-style;
+  text-align: center;
 }
 
 .photo {
-  height: 400px !important;
-}
-
-.swiper-container {
-  // width: 100%;
-  // height: 100%;
-  // padding: 50px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  padding-top: 250px;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  font-size: 18px;
-  width: 100%;
-  height: 100%;
-}
-.swiper-button-next,
-.swiper-button-prev {
-  padding: 30px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.swiper-button-next:hover {
-  color: red;
-}
-.swiper-button-prev:hover {
-  color: red;
-}
-//===============================================================================================================
-//=========================================basicLightbox=========================================================
-
-/* $basicLightbox__background: rgba(0, 0, 0, 0.8); // Background color
-$basicLightbox__zIndex: 1000; // Stack order
-$basicLightbox__duration: 0.4s; // Transition duration
-$basicLightbox__timing: ease; // Transition timing */
-.basicLightbox {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  opacity: 0.01;
-  transition: opacity 0.4s ease;
-  z-index: 1000;
-  will-change: opacity;
-}
-.basicLightbox--visible {
-  opacity: 1;
-}
-.basicLightbox__placeholder {
-  max-width: 100%;
-  transform: scale(0.9);
-  transition: transform 0.4s ease;
-  z-index: 1;
-  will-change: transform;
-}
-.basicLightbox__placeholder > iframe:first-child:last-child,
-.basicLightbox__placeholder > img:first-child:last-child,
-.basicLightbox__placeholder > video:first-child:last-child {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  max-width: 95%;
-  max-height: 95%;
-}
-.basicLightbox__placeholder > iframe:first-child:last-child,
-.basicLightbox__placeholder > video:first-child:last-child {
-  pointer-events: auto;
-}
-.basicLightbox__placeholder > img:first-child:last-child,
-.basicLightbox__placeholder > video:first-child:last-child {
-  width: auto;
-  height: auto;
-}
-.basicLightbox--iframe .basicLightbox__placeholder,
-.basicLightbox--img .basicLightbox__placeholder,
-.basicLightbox--video .basicLightbox__placeholder {
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.basicLightbox--visible .basicLightbox__placeholder {
-  transform: scale(1);
+  @extend %img-style;
+  @media screen and (min-width: 320px) {
+    height: 293px;
+  }
+  @media screen and (min-width: 768px) {
+    height: 236px;
+  }
+  @media screen and (min-width: 1280px) {
+    height: 266px;
+  }
 }
