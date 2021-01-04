@@ -5,6 +5,6 @@ import renderCard from './renderCard'
  export default function btnClick () { 
   apiService.inputValue(refs.search.value ).then(e => {
       renderCard(e.hits)
-    scrollTo(0, (refs.clientHeight + pageYOffset -60))
+    scrollTo(0, (refs.clientHeight + pageYOffset - 60))
   })
 }
