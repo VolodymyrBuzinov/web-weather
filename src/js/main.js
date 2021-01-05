@@ -43,6 +43,11 @@ mainRefs.header.addEventListener('click', evt => {
     evt.preventDefault();       
   }
  })
-window.addEventListener('load', evt => {
-  return history.pushState(null, null, `/`)
-})
+
+$(window).on('load', function () {
+  history.pushState(null, null, `/`)
+  var $preloader = $('#page-preloader'),
+       $spinner  = $preloader.find('.spinner');
+    $spinner.fadeOut();
+    $preloader.delay(500).fadeOut('slow');
+});

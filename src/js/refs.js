@@ -5,4 +5,6 @@ export default {
   googleMapsScript: document.querySelector('#googleMaps'),
   clientHeight: document.documentElement.clientHeight,
   main: document.querySelector('.main'),
+  preloader: document.getElementById('page-preloader'),
+  spinner: document.querySelector('.spinner'),
 };
