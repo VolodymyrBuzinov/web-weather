@@ -42,4 +42,7 @@ mainRefs.header.addEventListener('click', evt => {
   if (evt.target.getAttribute('class') !== "photo") {
     evt.preventDefault();       
   }
+ })
+window.addEventListener('load', evt => {
+  return history.pushState(null, null, `/`)
 })

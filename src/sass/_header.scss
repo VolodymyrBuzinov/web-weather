@@ -112,3 +112,24 @@ body {
     align-items: center;
   }
 }
+#page-preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: $main-color;
+  z-index: 100500;
+}
+
+#page-preloader .spinner {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  background: url('../images/spinner.gif') no-repeat center;
+  border-radius: 50px;
+
+  // margin: -16px 0 0 -16px;
+}
