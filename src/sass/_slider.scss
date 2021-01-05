@@ -1,0 +1,36 @@
+.is-hidden {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.slider-container {
+  @extend %container-style;
+}
+.gallery {
+  @extend %list-style;
+}
+
+.btn {
+  @extend %search-button;
+}
+
+.div-loader {
+  // @extend %section-style;
+  text-align: center;
+  padding: 30px 0px;
+}
+
+.photo {
+  @extend %img-style;
+  @media screen and (min-width: 320px) {
+    height: 293px;
+  }
+  @media screen and (min-width: 768px) {
+    height: 236px;
+  }
+  @media screen and (min-width: 1280px) {
+    height: 266px;
+  }
+}

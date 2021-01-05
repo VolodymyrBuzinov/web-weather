@@ -1,0 +1,17 @@
+<div id="slider" class="div-loader">
+    <div id="loader" class="slider-container">
+        <ul class="gallery js-gallery">
+            {{#each this}}
+            <li>
+                <div class="photo-card">
+                    <a data-fancybox="gall" href="{{largeImageURL}}">
+                        <img class="photo" loading="lazy" src="{{webformatURL}}" alt="img" />
+                    </a>
+
+                </div>
+            </li>
+            {{/each}}
+            <!-- Список <li> с карточками изображений -->
+        </ul>
+    </div>
+</div>
