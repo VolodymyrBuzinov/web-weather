@@ -1,15 +1,6 @@
 .is-hidden {
   display: none;
 }
-// #slider {
-//   height: 100vh;
-//   background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.8)),
-//     url('https://wikiway.com/upload/resize_cache/hl-photo/492/1024_800_1/kreshatik_9.JPG');
-//   background-repeat: no-repeat;
-//   background-size: 130%;
-//   background-attachment: fixed;
-//   background-position: top;
-// }
 
 html {
   scroll-behavior: smooth;
@@ -26,9 +17,9 @@ html {
 }
 
 .div-loader {
-  @extend %section-style;
+  // @extend %section-style;
   text-align: center;
-  padding-bottom: 60px;
+  padding: 30px 0px;
 }
 
 .photo {

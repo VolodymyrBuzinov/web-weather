@@ -1,3 +1,5 @@
+import refs from '../refs'
+
 export default class HeaderLogic {
     constructor() {
       
@@ -10,12 +12,12 @@ export default class HeaderLogic {
     }
     }
     searchQuery(evt) {
-        if (evt.target.tagName === "INPUT") {
-        if (evt.target.value === '') {
+        if (evt.target === refs.headerButton) {
+             if (refs.headerInput.value === '') {
             return;
         }
-      return console.log(evt.target.value);
-    }
+             return console.log(refs.headerInput.value);
+         }   
     }
 }
 
