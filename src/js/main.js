@@ -2,7 +2,10 @@ import refs from './refs';
 import HeaderLogic from './header/headerLogic';
 import mapsMarkup from '../templates/maps.hbs';
 import MyMap from './maps/maps';
-import SliderLogic from './slider/slider'
+import SliderLogic from './slider/slider';
+import FetchNews from './news/fetchNews';
+import AppendNewsMarkup from './news/appendNewsMarkup';
+
 const headerLogic = new HeaderLogic();
 const myMap = new MyMap();
 const sliderLogic = new SliderLogic();
@@ -20,15 +23,21 @@ mainRefs.header.addEventListener('click', evt => {
     myMap.initializeMap();
     myMap.codeAddress();
   }
+  if (evt.target.getAttribute('href') === "/news") {
+    const { main } = refs;
+    main.innerHTML = "";
+    const fetchNews = new FetchNews();
+    const appendNewsMarkup = new AppendNewsMarkup(main, fetchNews);
+}
   if (evt.target.classList.contains('header-button')) {
     const location = window.location.href.split('/');
     if (location[location.length - 1] === 'photo') {
       sliderLogic.inputSearchValue(refs.headerInput.value)
     }    
-      if (location[location.length - 1] !== 'maps') {
-        return;
-      }
-      myMap.codeAddress();
+    if (location[location.length - 1] !== 'maps') {
+      return;
+    }
+    myMap.codeAddress();
     }
     if (evt.target.getAttribute('href') === "/photo") {
       sliderLogic.inputSearchValue(refs.headerInput.value)
