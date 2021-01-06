@@ -3,14 +3,15 @@ import HeaderLogic from './header/headerLogic';
 import mapsMarkup from '../templates/maps.hbs';
 import MyMap from './maps/maps';
 import SliderLogic from './slider/slider';
+import darkTheme from './maps/mapThemeDark.json';
 import FetchNews from './news/fetchNews';
 import AppendNewsMarkup from './news/appendNewsMarkup';
-import darkTheme from './maps/mapThemeDark.json';
 
 
 const headerLogic = new HeaderLogic();
 const myMap = new MyMap();
 const sliderLogic = new SliderLogic();
+const fetchNews = new FetchNews();
 const mainRefs = {
   header: document.querySelector('.header'),
   main: document.querySelector('.main'),
@@ -36,20 +37,9 @@ mainRefs.header.addEventListener('click', evt => {
   }
   if (evt.target.getAttribute('href') === "/news") {
     const { main } = refs;
-    main.innerHTML = "";
-    const fetchNews = new FetchNews();
+    main.innerHTML = "";    
     const appendNewsMarkup = new AppendNewsMarkup(main, fetchNews);
-}
-  if (evt.target.classList.contains('header-button')) {
-    const location = window.location.href.split('/');
-    if (location[location.length - 1] === 'photo') {
-      sliderLogic.inputSearchValue(refs.headerInput.value)
-    }    
-    if (location[location.length - 1] !== 'maps') {
-      return;
-    }
-    myMap.codeAddress();
-
+  }
 
   if (evt.target.classList.contains('header-button')) {
     const location = window.location.href.split('/');
@@ -59,7 +49,6 @@ mainRefs.header.addEventListener('click', evt => {
     if (location[location.length - 1] === 'maps') {
       myMap.codeAddress();
       return;
-
     }
   }
 
@@ -72,9 +61,9 @@ mainRefs.main.addEventListener('click', evt => {
     evt.preventDefault();
     myMap.eventListenerOnButtons(evt);
   }
-  if (evt.target.getAttribute('class') !== 'photo') {
-    evt.preventDefault();
-  }
+  // if (evt.target.getAttribute('class') !== 'photo') {
+  //   evt.preventDefault();
+  // }
 });
 
 $(window).on('load', function () {

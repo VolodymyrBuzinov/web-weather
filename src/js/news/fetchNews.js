@@ -8,7 +8,7 @@ export default class FetchNews {
         let req = new Request(url);
         return fetch(req)
             .then(res => res.json(), res => res.status)
-            .then(news => { return news; })
+            .then(news => { return news })
             .catch(reason => console.error(reason))
     }
 }
