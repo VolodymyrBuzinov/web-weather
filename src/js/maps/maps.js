@@ -1,4 +1,5 @@
 import refs from '../refs';
+import darkTheme from './mapThemeDark.json';
 
 let geocoder;
 let map;
@@ -6,12 +7,19 @@ let map;
 export default class MyMap {
   constructor() {}
 
-  initializeMap() {
+  initializeMap(mapStyle = []) {
+    // let mapStyle;
+    // if (localStorage.getItem('theme') === 'DARK') {
+    //     mapStyle = darkTheme;
+    // } else {
+    //     mapStyle = []
+    // }
     geocoder = new google.maps.Geocoder();
     const latlng = new google.maps.LatLng(47.563, 24.113);
     const mapOptions = {
       zoom: 2,
       center: latlng,
+      styles: mapStyle,
     };
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -21,6 +29,8 @@ export default class MyMap {
     map.overlayMapTypes.pop();
 
     if (target.dataset.layer === 'remove') {
+      this.initializeMap();
+      this.codeAddress();
       return;
     }
 
