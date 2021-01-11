@@ -1,9 +1,5 @@
 .maps {
-  margin: 0 auto;
-  width: 900px;
-  @media screen and (max-width: 767px) {
-    width: 90%;
-  }
+  @extend %container-style;
 }
 .maps-buttons {
   padding: 0;
@@ -12,6 +8,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 479px) {
+    flex-direction: column;
+    button {
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    li {
+      width: 100%;
+    }
+  }
   button {
     @extend %buttons-style;
     background-color: transparent;
