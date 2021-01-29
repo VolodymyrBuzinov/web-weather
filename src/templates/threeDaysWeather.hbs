@@ -1,0 +1,25 @@
+<section class="weather">
+    <ul class="weather__seven-days">
+        <div class="weather__item-box">
+            <h1 class="weather__country">{{location.country}}</h1>
+            <h2 class="weather__location">{{location.name}}</h2>
+        </div>
+        {{#each forecast.forecastday}}
+        <li class="weather__items">
+            <p class="weather__day">{{date}}</p>
+            <div class="weather__item-box">
+                <img src={{day.condition.icon}} alt="Погода" class="weather__item-img">
+                <div class="weather__items-block">
+                    <p class="weather__item-descr">Max {{day.maxtemp_c}}°</p>
+                    <p class="weather__item-descr">Min {{day.mintemp_c}}°</p>
+                </div>
+                <div class="weather__items-block">
+                    <p class="weather__item-descr">Sunrise {{astro.sunrise}}</p>
+                    <p class="weather__item-descr">Sunset {{astro.sunset}}</p>
+                </div>
+            </div>
+        </li>
+        <hr class="weather___line">
+        {{/each}}
+    </ul>
+</section>

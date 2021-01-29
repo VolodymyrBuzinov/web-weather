@@ -1,0 +1,257 @@
+.weather {
+  @media screen and (min-width: 768px) {
+    padding: 15px;
+  }
+
+  &__container {
+    @extend %container-style;
+    @media screen and (min-width: 768px) {
+      padding: 50px;
+      border: 2px solid $hover-color;
+      border-radius: 20px;
+      box-shadow: 0px 0px 23px 0px rgba(0, 154, 216, 1);
+    }
+  }
+
+  &__current {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__country {
+    @extend %text-throw;
+    color: $hover-color;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__day {
+    @extend %text-throw;
+    color: $hover-color;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+      font-size: 12px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 25px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 30px;
+    }
+  }
+
+  &__box {
+    @media screen and (max-width: 767px) {
+      margin-top: 28px;
+    }
+    @media screen and (min-width: 768px) {
+      text-align: right;
+    }
+  }
+
+  &__location {
+    @extend %text-throw;
+    color: $hover-color;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 8px;
+      text-align: center;
+      font-size: 25px;
+    }
+    @media screen and (min-width: 768px) {
+      margin-bottom: 15px;
+      font-size: 32px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__region {
+    @extend %text-throw;
+    color: $hover-color;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 8px;
+      text-align: center;
+      font-size: 12px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 25px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 30px;
+    }
+  }
+
+  &__visualization {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 767px) {
+      justify-content: center;
+    }
+    @media screen and (min-width: 768px) {
+      justify-content: space-evenly;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-top: 20px;
+    }
+  }
+
+  &__temperature {
+    @extend %text-throw;
+    color: $hover-color;
+    @media screen and (max-width: 767px) {
+      margin-right: 15px;
+      font-size: 28px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 30px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 40px;
+    }
+  }
+
+  &__icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  &__description {
+    @extend %list-throw;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    @media screen and (max-width: 1279px) {
+      margin-top: 30px;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-top: 70px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icons {
+    display: block;
+    @media screen and (max-width: 767px) {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+    }
+    @media screen and (min-width: 768px) {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+  }
+
+  &__text {
+    @extend %text-throw;
+    color: $hover-color;
+    @media screen and (min-width: 768px) {
+      font-size: 12px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 20px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 30px;
+    }
+  }
+
+  &__seven-days {
+    @extend %list-throw;
+    // @extend %container-style;
+    margin: 0;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    @media screen and (max-width: 1279px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    @media screen and (min-width: 1280px) {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+
+  &__item-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &__items-block {
+    @media screen and (max-width: 767px) {
+      margin-left: 20px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-left: 40px;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-left: 60px;
+    }
+  }
+
+  &__item-descr {
+    @extend %text-throw;
+    color: $hover-color;
+    @media screen and (max-width: 767px) {
+      font-size: 12px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 20px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: 30px;
+    }
+  }
+
+  &__item-descr:not(:last-child) {
+    @media screen and (max-width: 1279px) {
+      margin-bottom: 10px;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &___line {
+    margin: 0 auto;
+    border: none;
+    background-color: $hover-color;
+    color: $hover-color;
+    width: 70%;
+    height: 2px;
+  }
+}
