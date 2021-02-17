@@ -57,6 +57,14 @@ mainRefs.header.addEventListener('click', evt => {
       myMap.codeAddress();
       return;
     }
+    if(location[location.length - 1] === 'forecast') {
+      mainRefs.main.innerHTML = '';
+      weatherLogic.renderSearchWeather();
+    }
+    if(location[location.length - 1] === '') {
+      mainRefs.main.innerHTML = '';
+      weatherLogic.renderSearchWeather();
+    }
   }
 
   if (evt.target.getAttribute('href') === '/photo') {
@@ -66,17 +74,7 @@ mainRefs.header.addEventListener('click', evt => {
   if (evt.target.getAttribute('href') === '/') {
     mainRefs.main.innerHTML = '';
     weatherLogic.renderSearchWeather();
-  }
-
-  if (location[location.length - 1] === 'forecast') {
-    mainRefs.main.innerHTML = '';
-    weatherLogic.renderSearchWeather();
-  }
-
-  if (location[location.length - 1] === '') {
-    mainRefs.main.innerHTML = '';
-    weatherLogic.renderSearchWeather();
-  }
+  } 
 });
 mainRefs.main.addEventListener('click', evt => {
   if (evt.target.dataset.layer) {
