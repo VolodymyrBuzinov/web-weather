@@ -16,7 +16,7 @@ export default class HeaderLogic {
              if (refs.headerInput.value === '') {
             return;
         }
-             return console.log(refs.headerInput.value);
+             return refs.headerInput.value;
          }   
     }
 }
