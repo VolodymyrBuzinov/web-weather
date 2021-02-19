@@ -15,13 +15,14 @@ export default class WeatherApi {
 
   fetchSearchWeather(searchQuery) {
     const url = `${BASE_URL}/forecast.json?key=${API_KEY}&q=${searchQuery}`;
+    
     return fetch(url).then(res => {
       if (res.ok) {
         return res.json();
-      }
+      }     
       refs.main.innerHTML = '';
-      swal('По вашему запросу ничего не найдено');
-      return Promise.reject(new Error('По вашему запросу ничего не найдено'));
+      swal('Ups', 'Information not found, or empty request', 'error');      
+      return Promise.reject(new Error('Ups', 'Information not found, or empty request', 'error'));
     });
   }
 
@@ -30,10 +31,10 @@ export default class WeatherApi {
     return fetch(url).then(res => {
       if (res.ok) {
         return res.json();
-      }
+      }      
       refs.main.innerHTML = '';
-      swal('По вашему запросу ничего не найдено');
-      return Promise.reject(new Error('По вашему запросу ничего не найдено'));
+      swal('Ups', 'Information not found, or empty request', 'error');
+      return Promise.reject(new Error('Ups', 'Information not found, or empty request', 'error'));
     });
   }
 }

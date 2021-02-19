@@ -69,7 +69,7 @@ export default class MyMap {
         });
       } else {
         swal({
-          title: 'Выберите пожалуйста ваш город!',
+          title: 'Please, write city or country name!',
           icon: 'info',
         });
       }

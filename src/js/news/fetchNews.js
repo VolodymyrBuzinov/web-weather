@@ -4,8 +4,8 @@ export default class FetchNews {
     getLastNews (){
         
        const url = 'http://newsapi.org/v2/everything?' +
-           'q=Климат&' +
-           'language=ru&' +          
+           'q=weather&' +
+           'language=en&' +          
           'apiKey=dcd86c1488e4473badee8250e13e81e8';
         let req = new Request(url);
         return fetch(req)
