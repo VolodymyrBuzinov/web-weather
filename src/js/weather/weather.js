@@ -19,10 +19,10 @@ export default class WeatherApi {
     return fetch(url).then(res => {
       if (res.ok) {
         return res.json();
-      }     
-      refs.main.innerHTML = '';
+      }    
+      
       swal('Ups', 'Information not found, or empty request', 'error');      
-      return Promise.reject(new Error('Ups', 'Information not found, or empty request', 'error'));
+      return fetch(`${BASE_URL}/forecast.json?key=${API_KEY}&q=Ukraine`).then(res => res.json());
     });
   }
 
@@ -31,10 +31,10 @@ export default class WeatherApi {
     return fetch(url).then(res => {
       if (res.ok) {
         return res.json();
-      }      
-      refs.main.innerHTML = '';
+      }    
+      
       swal('Ups', 'Information not found, or empty request', 'error');
-      return Promise.reject(new Error('Ups', 'Information not found, or empty request', 'error'));
+      return fetch(`${BASE_URL}/forecast.json?key=${API_KEY}&q=Kiev&days=3`).then(res => res.json())
     });
   }
 }
