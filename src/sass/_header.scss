@@ -28,8 +28,10 @@ body.light-theme {
     height: 80px;
     margin-left: auto;
     margin-right: auto;
+    animation: cloudY 5000ms infinite;
   }
   @media screen and (min-width: 768px) {
+    animation: cloudX 5000ms infinite;
     width: 100px;
     height: 100px;
     margin-right: 20px;
@@ -38,6 +40,28 @@ body.light-theme {
     width: 50px;
     height: 50px;
     margin-right: 0;
+  }
+}
+@keyframes cloudY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes cloudX {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 .header-input {
