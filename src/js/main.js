@@ -96,6 +96,8 @@ window.addEventListener('load', function () {
   $spinner.fadeOut();
   $preloader.delay(500).fadeOut('slow');
   weatherLogic.renderWeather();  
+  
+  
   if (localStorage.getItem('LIGHT')) {
     mainRefs.body.classList.add('light-theme');
     const switcher = document.querySelector('.switcher')
