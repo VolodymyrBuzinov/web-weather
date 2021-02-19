@@ -11,8 +11,7 @@ export default class WeatherLogic {
   renderWeather() {
     weather
       .fetchUkraineWeather()
-      .then(data => {
-        console.log(data);
+      .then(data => {        
         this.addCountryWeatherMarkup(data);
       })
       .catch(err => console.log(err));
@@ -26,7 +25,7 @@ export default class WeatherLogic {
       .then(data => {
         return this.addCountryWeatherMarkup(data);
       })
-      .catch(error => console.log(error.message));
+      .catch(error => error.message);
   }
 
   renderThreeDaysWeather() {
@@ -37,7 +36,7 @@ export default class WeatherLogic {
       .then(data => {
         this.addThreeDaysWeatherMarkup(data);
       })
-      .catch(error => console.log(error));
+      .catch(error => error);
   }
 
   addCountryWeatherMarkup(data) {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Веб-Застосунок Погоди</title>
+    <title>Веб приложение погоды</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;500;700&display=swap"
@@ -20,10 +20,12 @@
       href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
     />
   </head>
-  <body>
+  <body>  
+    <div>
+      <input class="switcher" type="checkbox">
+    </div>
     <header class="header">${require('./partials/header.html')}</header>
-    <main class="main"></main>
-
+    <main class="main"></main>    
     <script
       id="googleMaps"
       async

@@ -7,6 +7,7 @@ import darkTheme from './maps/mapThemeDark.json';
 import FetchNews from './news/fetchNews';
 import AppendNewsMarkup from './news/appendNewsMarkup';
 import WeatherLogic from './weather/weatherLogic';
+import './header/theme-switch';
 
 const headerLogic = new HeaderLogic();
 const myMap = new MyMap();
@@ -15,6 +16,7 @@ const fetchNews = new FetchNews();
 const weatherLogic = new WeatherLogic();
 
 const mainRefs = {
+  body: document.querySelector('body'),
   header: document.querySelector('.header'),
   main: document.querySelector('.main'),
 };
@@ -87,11 +89,16 @@ mainRefs.main.addEventListener('click', evt => {
   // }
 });
 
-$(window).on('load', function () {
+window.addEventListener('load', function () {  
   history.pushState(null, null, `/`);
   var $preloader = $('#page-preloader'),
     $spinner = $preloader.find('.spinner');
   $spinner.fadeOut();
   $preloader.delay(500).fadeOut('slow');
-  weatherLogic.renderWeather();
+  weatherLogic.renderWeather();  
+  if (localStorage.getItem('LIGHT')) {
+    mainRefs.body.classList.add('light-theme');
+    const switcher = document.querySelector('.switcher')
+    switcher.checked = true;
+  }
 });

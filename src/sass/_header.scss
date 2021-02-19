@@ -1,6 +1,10 @@
 body {
   background-color: $main-color;
 }
+body.light-theme {
+  background-color: $white-color;
+}
+
 .header-container {
   @extend %container-style;
   padding-top: 50px;
@@ -20,8 +24,8 @@ body {
 .header-icon {
   display: block;
   @media screen and (max-width: 767px) {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -42,7 +46,6 @@ body {
   padding: 5px 25px;
   border-radius: 20px;
   border: 2px solid $main-color;
-  margin-right: 10px;
   transition: border $animation-timing;
   text-align: center;
   &:focus {
@@ -51,12 +54,15 @@ body {
   @media screen and (max-width: 1279px) {
     margin-bottom: 10px;
   }
+  @media screen and (min-width: 1280px) {
+    margin-right: 10px;
+  }
 }
 .header-nav {
   position: relative;
   &__swipe {
     position: absolute;
-    bottom: 10px;
+    bottom: 3px;
     right: 10px;
     display: block;
     width: 15px;
@@ -130,6 +136,85 @@ body {
   top: 45%;
   background: url('../images/spinner.gif') no-repeat center;
   border-radius: 50px;
+  @media screen and (max-width: 360px) {
+    left: 35%;
+  }
+  @media screen and (min-width: 361px) and (max-width: 600px) {
+    left: 38%;
+  }
+  @media screen and (min-width: 601px) and (max-width: 767px) {
+    left: 45%;
+  }
+}
 
-  // margin: -16px 0 0 -16px;
+.switcher {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 2px solid $hover-color;
+  background-color: $main-color;
+  border-radius: 1.75em;
+  box-shadow: 0.125em 0.125em 0 0.125em $main-color inset;
+  color: #fdea7b;
+  display: inline-flex;
+  align-items: center;
+  margin: auto;
+  padding: 0.15em;
+  width: 5em;
+  height: 3em;
+  transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    right: unset;
+    left: 20px;
+  }
+}
+.switcher:before,
+.switcher:after {
+  content: '';
+  display: block;
+}
+.switcher:before {
+  background-color: #d7d7d7;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+  z-index: 1;
+}
+.switcher:after {
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.15) 0) 0 50% /
+      50% 100%,
+    repeating-linear-gradient(90deg, #bbb 0, #bbb, #bbb 20%, #999 20%, #999 40%)
+      0 50% / 50% 100%,
+    radial-gradient(circle at 50% 50%, #888 25%, transparent 26%);
+  background-repeat: no-repeat;
+  border: 0.25em solid transparent;
+  border-left: 0.4em solid #d8d8d8;
+  border-right: 0 solid transparent;
+  transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+  transform: translateX(-22.5%);
+  transform-origin: 25% 50%;
+  width: 1.3em;
+  height: 1em;
+}
+/* Checked */
+.switcher:checked {
+  background-color: $hover-color;
+  box-shadow: 0.125em 0.125em 0 0.125em $hover-color inset;
+}
+.switcher:checked:before {
+  background-color: currentColor;
+  transform: translateX(125%);
+}
+.switcher:checked:after {
+  border-left-color: currentColor;
+  transform: translateX(-2.5%) rotateY(180deg);
+}
+/* Other States */
+.switcher:focus {
+  /* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
+  outline: 0;
 }
