@@ -8,4 +8,5 @@ export default {
   preloader: document.getElementById('page-preloader'),
   spinner: document.querySelector('.spinner'),
   newsContainer: document.querySelector('.news'),
+  footer: document.querySelector('.footer'),
 };

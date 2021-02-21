@@ -7,13 +7,13 @@ let map;
 export default class MyMap {
   constructor() {}
 
-  initializeMap(mapStyle = []) {
-    // let mapStyle;
-    // if (localStorage.getItem('theme') === 'DARK') {
-    //     mapStyle = darkTheme;
-    // } else {
-    //     mapStyle = []
-    // }
+  initializeMap() {
+    let mapStyle;
+    if (localStorage.getItem('LIGHT')) {
+      mapStyle = [];
+    } else {
+      mapStyle = darkTheme;
+    }
     geocoder = new google.maps.Geocoder();
     const latlng = new google.maps.LatLng(47.563, 24.113);
     const mapOptions = {
@@ -41,7 +41,7 @@ export default class MyMap {
     const radar = new google.maps.ImageMapType({
       getTileUrl: function (coord, zoom) {
         return [
-          `https://maps.aerisapi.com/2maTDvFREtWHurd6iYTyL_uD8Jme8ANIunPUXr5vzU1jfyuED7pWqcU88lahdq/${layer}:${opacity}/`,
+          `https://maps.aerisapi.com/tEb0juWxDg7M2WMXyibIh_oRkeZc8ljfmszz1Z2twDOdtwDb2xgR3R9HirYD6n/${layer}:${opacity}/`,
           zoom,
           '/',
           coord.x,

@@ -3,7 +3,6 @@ import HeaderLogic from './header/headerLogic';
 import mapsMarkup from '../templates/maps.hbs';
 import MyMap from './maps/maps';
 import SliderLogic from './slider/slider';
-import darkTheme from './maps/mapThemeDark.json';
 import FetchNews from './news/fetchNews';
 import AppendNewsMarkup from './news/appendNewsMarkup';
 import WeatherLogic from './weather/weatherLogic';
@@ -41,7 +40,7 @@ mainRefs.header.addEventListener('click', evt => {
 
     mainRefs.main.innerHTML = '';
     mainRefs.main.innerHTML = mapsMarkup();
-    myMap.initializeMap(darkTheme);
+    myMap.initializeMap();
     myMap.codeAddress();
   }
   if (evt.target.getAttribute('href') === '/news') {
@@ -59,11 +58,11 @@ mainRefs.header.addEventListener('click', evt => {
       myMap.codeAddress();
       return;
     }
-    if(location[location.length - 1] === 'forecast') {
+    if (location[location.length - 1] === 'forecast') {
       mainRefs.main.innerHTML = '';
       weatherLogic.renderSearchWeather();
     }
-    if(location[location.length - 1] === '') {
+    if (location[location.length - 1] === '') {
       mainRefs.main.innerHTML = '';
       weatherLogic.renderSearchWeather();
     }
@@ -76,7 +75,7 @@ mainRefs.header.addEventListener('click', evt => {
   if (evt.target.getAttribute('href') === '/') {
     mainRefs.main.innerHTML = '';
     weatherLogic.renderSearchWeather();
-  } 
+  }
 });
 mainRefs.main.addEventListener('click', evt => {
   if (evt.target.dataset.layer) {
@@ -89,18 +88,21 @@ mainRefs.main.addEventListener('click', evt => {
   // }
 });
 
-window.addEventListener('load', function () {  
+window.addEventListener('load', function () {
   history.pushState(null, null, `/`);
   var $preloader = $('#page-preloader'),
     $spinner = $preloader.find('.spinner');
   $spinner.fadeOut();
   $preloader.delay(500).fadeOut('slow');
-  weatherLogic.renderWeather();  
-  
-  
+  weatherLogic.renderWeather();
+
+  setTimeout(() => {
+    refs.footer.classList.add('visible');
+  }, 600);
+
   if (localStorage.getItem('LIGHT')) {
     mainRefs.body.classList.add('light-theme');
-    const switcher = document.querySelector('.switcher')
+    const switcher = document.querySelector('.switcher');
     switcher.checked = true;
   }
 });
