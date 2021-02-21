@@ -1,7 +1,7 @@
 import refs from '../refs'
 import './fetchNews'
 import newsHbs from '../../templates/news.hbs'
-import dftImg from '../../images/default-img.gif'
+
 export default class AppendNewsMarkup {
     constructor(main, fetchNews){
         this.refs = {
@@ -24,7 +24,7 @@ export default class AppendNewsMarkup {
         const { articles } = news;
         articles.map(article => {                      
             if (article.description === '') {
-                article.description = `Детали читайте на сайте ${article.source.name}.`;
+                article.description = `Details: ${article.source.name}.`;
             }
         });
         this.refs.newsContainer.insertAdjacentHTML('beforeend', newsHbs(articles));
