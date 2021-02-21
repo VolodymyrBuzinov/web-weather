@@ -2,7 +2,7 @@ import refs from '../refs';
 import swal from 'sweetalert';
 // import { reject } from 'core-js/fn/promise';
 
-const BASE_URL = 'http://api.weatherapi.com/v1';
+const BASE_URL = 'https://api.weatherapi.com/v1';
 const API_KEY = 'cffa5817950747edab2212245200112';
 
 export default class WeatherApi {
