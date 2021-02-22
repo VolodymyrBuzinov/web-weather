@@ -3,7 +3,7 @@ export default class FetchNews {
 
     getLastNews (){
         
-       const url = 'http://newsapi.org/v2/everything?' +
+       const url = 'https://newsapi.org/v2/everything?' +
            'q=weather&' +
            'language=en&' +          
           'apiKey=dcd86c1488e4473badee8250e13e81e8';
@@ -13,6 +13,6 @@ export default class FetchNews {
             .then(news => {                
                 return news
             })
-            .catch(reason => console.error(reason))
+            .catch(reason => reason)
     }
 }
