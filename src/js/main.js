@@ -106,8 +106,8 @@ window.addEventListener('load', function () {
     switcher.checked = true;
   }
 });
-window.addEventListener('keydown', evt => {
-  if (refs.headerInput.value !== '' && evt.code === 'Enter') {
+window.addEventListener('keydown', evt => {  
+  if (refs.headerInput.value !== '' && evt.code === 'Enter' || refs.headerInput.value !== '' && evt.keyCode === 13) {
     document.querySelector('.header-button').click();
   }
 })

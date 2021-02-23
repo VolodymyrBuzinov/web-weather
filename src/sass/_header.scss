@@ -22,11 +22,13 @@ body.light-theme {
   }
 }
 .header-logo {
+  display: block;
+  text-align: center;
   text-decoration: none;
   font-family: $lobster;
   color: $hover-color;
   font-size: 30px;
-  text-align: center;
+
   padding: 0;
   padding-bottom: 5px;
 }
