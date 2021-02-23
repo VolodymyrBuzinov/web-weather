@@ -2,17 +2,17 @@
     <div class="news__wrap">
         <ul class="news__list">
             {{#each this}}
-                <li class="news__item">
-                    <a class="news__item-link" href={{url}} target="_blank">
-                        <h2 class="news__heading">{{title}}</h2>
-                        <div class="news__image-wrap">
-                            <img class="news__photo" src={{urlToImage}} alt={{title}}>
-                            <p class="news__item-details">
-                                {{description}}
-                            </p>
-                        </div>
-                    </a>
-                </li>
+            <li class="news__item">
+                <a class="news__item-link" href={{url}} target="_blank">
+                    <h2 class="news__heading">{{title}}</h2>
+                    <div class="news__image-wrap">
+                        <img class="news__photo" src={{image}} alt={{title}}>
+                        <p class="news__item-details">
+                            {{description}}
+                        </p>
+                    </div>
+                </a>
+            </li>
             {{/each}}
         </ul>
     </div>

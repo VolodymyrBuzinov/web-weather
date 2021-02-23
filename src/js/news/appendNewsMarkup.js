@@ -1,4 +1,3 @@
-import refs from '../refs'
 import './fetchNews'
 import newsHbs from '../../templates/news.hbs'
 
