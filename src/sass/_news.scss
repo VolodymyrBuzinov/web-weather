@@ -4,25 +4,27 @@
  */
 
 .news {
-    @extend %container-style;  
+  @extend %container-style;
 }
 
 .news__list {
-    @extend %list-style;
+  @extend %list-style;
 }
 
 .news__item {
-    position: relative;
-    overflow: hidden;
-    width: inherit;
+  position: relative;
+  overflow: hidden;
+  width: inherit;
 
-    &:hover .news__item-details,
-    &:focus-within .news__item-details,
-    &:active .news__item-details { /* для IE<7 */
-      opacity: 1;
-      transform: translateY(0);
-      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
+  &:hover .news__item-details,
+  &:focus-within .news__item-details,
+  &:active .news__item-details {
+    /* для IE<7 */
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 /*
@@ -30,16 +32,16 @@
  * 
  */
 .news__heading {
-    position: absolute;
-    z-index: 1;
-    top: 15px;
-    margin: 5px 55px 5px 10px;
-    padding: 5px 15px 5px 15px;
-    font-size: 15px;
-    background-color: $main-color;
-    color: $white-color;
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  margin: 5px 55px 5px 10px;
+  padding: 5px 15px 5px 15px;
+  font-size: 15px;
+  background-color: $main-color;
+  color: $white-color;
 
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 /*
@@ -47,75 +49,69 @@
  * Висота задана для коректного відображення.
  */
 .news__image-wrap {
-    display: inline-block;
-    overflow: hidden;
-    height: 170px;
-    
-    &:hover {
-        transition: 1s;
-    }
+  display: inline-block;
+  overflow: hidden;
+  height: 170px;
+
+  &:hover {
+    transition: 1s;
+  }
 }
 
 .news__image-wrap img {
-    &:hover{
-        transform: scale(1.1); 
-        transition: 1s;
-      }
+  &:hover {
+    transform: scale(1.1);
+    transition: 1s;
+  }
 }
 
 .news__photo {
-    @extend %img-style;
-    transition: 1s;
+  @extend %img-style;
+  transition: 1s;
 }
 
 /*
  * Посилання
  * 
  */
-.news__item{
-    position: relative;
-}
-
-a {
-    @extend %link-throw;
-    width: inherit;
-    height: inherit;
+.news__item {
+  position: relative;
 }
 
 .news__item a {
-    display: block;
-    text-decoration: none;
+  display: block;
+  text-decoration: none;
+  color: $hover-color;
+  width: 100%;
+  height: 100%;
+
+  &:link {
+    //не видаляти
+  }
+
+  &:visited {
+    color: $white-color;
+  }
+
+  &:focus {
+    //не видаляти
+  }
+
+  &:hover {
+    // transition-delay: 0.2s;
+    // color: $white-color;
+  }
+
+  &:active {
+    color: $white-color;
+  }
+
+  &:hover .news__item-details {
     color: $hover-color;
-    width: 100%;
-    height: 100%;
-
-    &:link {
-    //не видаляти
-    }
-
-    &:visited {
-        color: $white-color;
-    }
-
-    &:focus {
-    //не видаляти
-    }
-
-    &:hover {
-        // transition-delay: 0.2s;
-        // color: $white-color;
-    }
-
-    &:active {
-        color: $white-color;
-    }
-
-    &:hover .news__item-details{
-        color: $hover-color;
-        background-color: $main-color;
-        opacity: 0.9;
-        transition: 1s;
-    }
+    background-color: $main-color;
+    opacity: 0.9;
+    transition: 1s;
+  }
 }
 
 /*
@@ -123,24 +119,25 @@ a {
  * Новина інколи не містить короткого опису.
  */
 .news__item-details {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    // height: 30%;
-    padding: 10px 15px 10px 15px;
-    margin: 5px 0px 5px 10px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  // height: 30%;
+  padding: 10px 15px 10px 15px;
+  margin: 5px 0px 5px 10px;
 
-    font-size: 12px;
-    text-align: justify;
-    text-overflow: ellipsis;
+  font-size: 12px;
+  text-align: justify;
+  text-overflow: ellipsis;
 
-    border-radius: 20px 0px 0px 20px;
+  border-radius: 20px 0px 0px 20px;
 
-    transform: translateX(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 3px 1px rgba(0, 0, 0, 0.1);
-  
-    opacity: 0;
+
+  opacity: 0;
 }

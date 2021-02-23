@@ -106,3 +106,8 @@ window.addEventListener('load', function () {
     switcher.checked = true;
   }
 });
+window.addEventListener('keydown', evt => {
+  if (refs.headerInput.value !== '' && evt.code === 'Enter') {
+    document.querySelector('.header-button').click();
+  }
+})

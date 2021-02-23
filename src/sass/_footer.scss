@@ -70,8 +70,16 @@
 .footer-link-item {
   transform: translateY(100%);
   height: auto;
+  @media screen and (max-width: 767px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
   @media screen and (min-width: 769px) {
     max-height: 100px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   @media screen and (max-width: 478px) {
@@ -85,6 +93,7 @@
 }
 
 .team-item-photo {
+  @extend %img-style;
   min-width: 65px;
   min-height: 65px;
   max-width: 70px;
@@ -93,21 +102,9 @@
 
   box-shadow: 0px 0px 10px 0px rgba(0, 154, 216, 1);
   overflow: hidden;
-  // transform: translateY(40px);
-  // @media screen and (max-width: 478px) {
-  //   transform: translateY(0);
-  //   transform: translateX(5px);
-  //   min-width: 20%;
-  // }
   @media screen and (min-height: 480px) and (min-width: 768px) {
     transform: translateY(0);
   }
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 .footer-link__about {
@@ -160,7 +157,6 @@ img {
   justify-content: center;
   // flex-direction: column;
   transition: scale $animation-timing;
-  padding-top: 20px;
   padding-bottom: 0;
   @media screen and (max-height: 479px) and (min-width: 478px) {
     transform: translateY(25px);
