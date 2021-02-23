@@ -1,9 +1,13 @@
 .weather {
   &__container {
     @extend %container-style;
-    border: 2px solid $hover-color;
-    border-radius: 20px;
-    box-shadow: 0px 0px 23px 0px rgba(0, 154, 216, 1);
+    @media screen and (max-width: 767px) {
+      border-top: 2px solid $hover-color;
+      border-bottom: 2px solid $hover-color;
+      // box-shadow: 0px 0px 23px 0px rgba(0, 154, 216, 1);
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
     @media screen and (min-width: 768px) {
       padding: 30px;
       border: 2px solid $hover-color;
