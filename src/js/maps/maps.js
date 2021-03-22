@@ -3,6 +3,8 @@ import darkTheme from './mapThemeDark.json';
 
 let geocoder;
 let map;
+const ACCES_ID = '9MUgFKJor2COZa1qBvUG9';
+const SECRET_KEY = 'bptJv1BSZdk2IYRlNIFPqLdlTRpkWTryRnh0UK1n';
 
 export default class MyMap {
   constructor() {}
@@ -41,7 +43,7 @@ export default class MyMap {
     const radar = new google.maps.ImageMapType({
       getTileUrl: function (coord, zoom) {
         return [
-          `https://maps.aerisapi.com/tEb0juWxDg7M2WMXyibIh_oRkeZc8ljfmszz1Z2twDOdtwDb2xgR3R9HirYD6n/${layer}:${opacity}/`,
+          `https://maps.aerisapi.com/${ACCES_ID}_${SECRET_KEY}/${layer}:${opacity}/`,
           zoom,
           '/',
           coord.x,
